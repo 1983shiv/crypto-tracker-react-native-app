@@ -8,7 +8,7 @@
 ### clone the repository to your computer
 `git clone https://github.com/1983shiv/crypto-tracker-react-native-app`
 
-### go to tik-tac-to directory
+### go to crypto-tracker-react-native-app directory
 `crypto-tracker-react-native-appo`
 
 ### install necessary dependancies
