@@ -18,6 +18,8 @@ export default function CoinIte({ marketCoin }) {
       return marketCap;
     }
   }
+
+  const upDownColor = (price_change_percentage_24h < 0) ? 'red' : 'green' ;
   return (
     <View style={styles.coinContainer}>
       <Image
@@ -37,8 +39,8 @@ export default function CoinIte({ marketCoin }) {
         <View style={{ flexDirection: 'row' }}>
           <Text style={styles.textOne}>{market_cap_rank}</Text>
           <Text style={styles.text}>{symbol.toUpperCase()}</Text>
-          {(price_change_percentage_24h < 0) ? <AntDesign name="caretdown" size={12} color="red" style={{ alignSelf: 'center', marginHorizontal: 4 }} /> : <AntDesign name="caretup" size={12} color="green" style={{ alignSelf: 'center', marginHorizontal: 4 }} />}
-          <Text style={styles.text}>{price_change_percentage_24h.toFixed(2)}%</Text>
+          <AntDesign name={(price_change_percentage_24h < 0) ? "caretdown" : "caretup" } size={12} color={upDownColor} style={{ alignSelf: 'center', marginHorizontal: 4, marginTop: 4 }} />
+          <Text style={{ color: upDownColor, fontSize: 10, fontWeight: 'bold', marginTop: 4}}>{price_change_percentage_24h.toFixed(2)}%</Text>
         </View>
       </View>
       <View style={{ marginLeft: 'auto', marginRight: 2, alignItems: 'flex-end' }}>
